@@ -1,0 +1,39 @@
+# Scala specific
+*.class
+*.log
+*.cache
+*.project
+*.idea
+*.classpath
+*.settings
+*.history
+*.DS_Store
+*.swp
+*.swo
+*.bak
+*.orig
+
+# SBT specific
+target/
+lib_managed/
+src_managed/
+project/target/
+project/project/
+.cache/
+lib/
+.bsp
+
+# Eclipse specific
+.project
+.classpath
+.settings/
+
+# Intellij specific
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# VS Code specific
+.vscode/
