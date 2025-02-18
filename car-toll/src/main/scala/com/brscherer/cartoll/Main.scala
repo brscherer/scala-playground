@@ -64,18 +64,6 @@ class TollRepository(db: Database)(implicit ec: ExecutionContext) {
     val insertAction = (Toll returning Toll.map(_.id)) += newToll
     db.run(insertAction)
   }
-
-  def getSalesByDate(dateStr: String): Future[Seq[TollModel]] = {
-    val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-    val date = new java.sql.Date(dateFormat.parse(dateStr).getTime)
-    val query = for {
-      toll <- Toll if toll.date === date
-    } yield (toll.id, toll.date, toll.carType, toll.amount, toll.licensePlate)
-
-    db.run(query.result).map(_.map {
-      case (id, date, carType, amount, licensePlate) => TollModel(id, date.toString, carType, amount, licensePlate)
-    })
-  }
 }
 
 
