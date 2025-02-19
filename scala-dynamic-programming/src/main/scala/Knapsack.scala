@@ -1,16 +1,12 @@
 def knapsack(weights: Array[Int], values: Array[Int], capacity: Int): Int = {
   val n = weights.length
-  val dp = Array.ofDim[Int](n + 1, capacity + 1)
+  val dp = Array.fill(capacity + 1)(0)
 
-  for (i <- 1 to n) {
-    for (w <- 0 to capacity) {
-      if (weights(i - 1) <= w) {
-        dp(i)(w) = Math.max(dp(i - 1)(w), values(i - 1) + dp(i - 1)(w - weights(i - 1)))
-      } else {
-        dp(i)(w) = dp(i - 1)(w)
-      }
+  for (i <- 0 until n) {
+    for (w <- capacity to weights(i) by -1) {      
+      dp(w) = Math.max(dp(w), values(i) + dp(w - weights(i)))
     }
   }
 
-  dp(n)(capacity)
+  dp(capacity)
 }
