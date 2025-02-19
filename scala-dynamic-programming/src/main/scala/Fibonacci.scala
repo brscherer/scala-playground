@@ -6,6 +6,3 @@ def fib(n: Int, memo: mutable.Map[Int, Int] = mutable.Map()): Int = {
   memo.getOrElseUpdate(n, fib(n - 1, memo) + fib(n - 2, memo))
 }
 
-@main
-def main(): Unit =
-  println(fib(10)) // Output: 55
