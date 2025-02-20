@@ -1,16 +1,19 @@
 def lcs(X: String, Y: String): Int = {
   val m = X.length
   val n = Y.length
-  val dp = Array.ofDim[Int](m + 1, n + 1)
+
+  var prev = Array.fill(n + 1)(0)
+  val curr = Array.fill(n + 1)(0)
 
   for (i <- 1 to m) {
     for (j <- 1 to n) {
       if (X(i - 1) == Y(j - 1))
-        dp(i)(j) = 1 + dp(i - 1)(j - 1)
+        curr(j) = 1 + prev(j - 1)
       else
-        dp(i)(j) = Math.max(dp(i - 1)(j), dp(i)(j - 1))
+        curr(j) = Math.max(prev(j), curr(j - 1))
     }
+    prev = curr.clone()
   }
 
-  dp(m)(n)
+  prev(n)
 }
