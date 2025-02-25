@@ -8,3 +8,4 @@ def main(): Unit =
   println(lis(Array(10, 9, 2, 5, 3, 7, 101, 18))) // Expected Output: 4
   println(lps("bbbab")) // Expected Output: 4
   println(editDistance("intention", "execution")) // Expected Output: 5
+  println(subsetSum(Array(3, 34, 4, 12, 5, 2), 9)) // Expected Output: true (4,5)
