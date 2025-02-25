@@ -7,3 +7,4 @@ def main(): Unit =
   println(lcs("abcde", "ace")) // Output: 3
   println(lis(Array(10, 9, 2, 5, 3, 7, 101, 18))) // Expected Output: 4
   println(lps("bbbab")) // Expected Output: 4
+  println(editDistance("intention", "execution")) // Expected Output: 5
