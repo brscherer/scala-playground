@@ -8,7 +8,7 @@ lazy val root = (project in file("."))
     name := "scala-manga-tracker",
     version := "0.1.0",
     libraryDependencies ++= Seq(
-      "org.springframework.boot" % "spring-boot-starter-webflux" % springBootVersion excludeAll (
+      "org.springframework.boot" % "spring-boot-starter-web" % springBootVersion excludeAll (
         ExclusionRule("ch.qos.logback", "logback-classic"),
         ExclusionRule("org.apache.logging.log4j", "log4j-to-slf4j")
       ),
@@ -18,6 +18,7 @@ lazy val root = (project in file("."))
       "org.springframework.boot" % "spring-boot-starter-data-jdbc" % springBootVersion,
       "org.apache.logging.log4j" % "log4j-core" % "2.24.3",
       "org.springframework.boot" % "spring-boot-starter-test" % springBootVersion % Test,
+      "com.h2database" % "h2" % "2.2.224",
     ),
     fork := true
   )
