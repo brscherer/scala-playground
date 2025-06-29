@@ -7,6 +7,6 @@ class MangaTrackerApp
 
 object MangaTrackerApp {
   def main(args: Array[String]): Unit = {
-    SpringApplication.run(classOf[MangaTrackerApp], args: _*)
+    SpringApplication.run(classOf[MangaTrackerApp], args*)
   }
 }
