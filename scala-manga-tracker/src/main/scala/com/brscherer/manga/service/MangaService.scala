@@ -1,20 +1,18 @@
 package com.brscherer.manga.service
 
-import com.brscherer.manga.model.MangaEntry
-import com.brscherer.manga.repository.MangaRepository
+import com.brscherer.manga.dao.MangaDAO
+import com.brscherer.manga.domain.model.MangaEntry
 import org.springframework.stereotype.Service
 
-import scala.jdk.CollectionConverters.*
-
 @Service
-class MangaService(private val repo: MangaRepository) {
+class MangaService(private val mangaDAO: MangaDAO) {
 
   def addEntry(name: String, chapter: Int): MangaEntry = {
     val entry = MangaEntry(name = name, chapter = chapter)
-    repo.save(entry)
+    mangaDAO.save(entry)
   }
 
   def listEntries(): List[MangaEntry] = {
-    repo.findAll().asScala.toList
+    mangaDAO.findAll()
   }
 }

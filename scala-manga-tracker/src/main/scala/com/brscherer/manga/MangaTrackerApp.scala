@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories
 
 @SpringBootApplication
-@EnableJdbcRepositories(basePackages = Array("com.brscherer.manga.repository"))
+@EnableJdbcRepositories
 class MangaTrackerApp
 
 object MangaTrackerApp {
