@@ -15,4 +15,8 @@ class MangaService(private val mangaDAO: MangaDAO) {
   def listEntries(): List[MangaEntry] = {
     mangaDAO.findAll()
   }
+
+  def findByName(name: String): List[MangaEntry] = {
+    mangaDAO.findByName(name)
+  }
 }
