@@ -1,0 +1,5 @@
+FROM alpine:latest
+WORKDIR /sidecar
+COPY sidecar/logger.sh .
+RUN chmod +x logger.sh
+CMD ["./logger.sh"]
